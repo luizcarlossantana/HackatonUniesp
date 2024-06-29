@@ -1,17 +1,24 @@
+import { Link } from 'react-router-dom';
+
+
 import React, { useState } from 'react';
 import { Login, entrar } from '../service/api';
 const Login = () => {
   
 
   return (
-    <div className="container pt-5 pb-5"> {/* Adicionando margem superior (mt-5) e inferior (mb-5) */}
-      <div className="d-flex">
-        <div className="col-md-6 gradient-background  pt-5 pb-5">
-          <div className="logo d-flex" style={{ justifyContent: 'center', alignItems: 'center'}}>
+    <div className="container pt-5 pb-5 "> {/* Adicionando margem superior (mt-5) e inferior (mb-5) */}
+     
+
+      
+      
+      <div className="d-flex shadow">
+        <div className="col-md-6 gradient-background  pt-5 pb-5 rounded-start " >
+          <div className="logo d-flex " style={{ justifyContent: 'center', alignItems: 'center'}}>
             <img src='logoReceitaWhite.svg' alt="logo da Receita Federal" className="img-fluid" style={{ width: '400px', height: 'auto' }}/>
           </div>
         </div>
-        <div className="col-md-6  pt-5 pb-5">
+        <div className="col-md-6  pt-5 pb-5 rounded-3 rounded-end shadow" >
           <div className="right-screen1  pt-5 pb-5 d-flex flex-column justify-content-center align-items-center">
             <h2>Entrar</h2>
 
@@ -27,7 +34,8 @@ const Login = () => {
               </div>
 
               <p>
-                Ainda não tem conta? <a href="./tela2.html">Criar conta</a>
+                Ainda não tem conta? 
+                <Link className='m-2' to="/cadastro">Criar conta</Link>
               </p>
 
               <button type="button" className="btn btn-primary" onClick={handleSubmit}>Fazer Login</button>
