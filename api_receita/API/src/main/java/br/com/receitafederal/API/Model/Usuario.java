@@ -1,4 +1,4 @@
-package br.com.receitafederal.API.model;
+package br.com.receitafederal.API.Model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -14,17 +14,19 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Data
 @Entity
-public class User implements Serializable {
+public class Usuario implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String username;
+    private String usuarioname;
 
     private String password;
 
     private String email;
 
     private String newPassword;
+
+    private String cpf;
 }
