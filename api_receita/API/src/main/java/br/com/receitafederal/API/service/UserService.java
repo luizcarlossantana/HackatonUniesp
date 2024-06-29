@@ -71,4 +71,8 @@ public class UserService {
         user.setPassword(senhaCodificada);
         usuarioRepository.save(user);
     }
+
+    public Usuario creatUser(){
+        return null;
+    }
 }
