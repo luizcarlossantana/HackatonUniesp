@@ -1,0 +1,96 @@
+.container {
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+
+}
+
+.geral{
+  width: 100%;
+}
+
+.left-section {
+  background: linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%);
+  padding: 40px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.left-section .logo img {
+  width: 400px;
+  height: 400px;
+}
+
+.hide {
+  display: none;
+}
+
+.right-screen1,
+.right-screen2 {
+  padding: 40px;
+  width: 50%;
+}
+
+h2 {
+  font-family: "Mulish", sans-serif;
+  font-weight: bold;
+  color: rgb(63, 76, 119);
+
+  margin-bottom: 25px;
+}
+
+p {
+  margin-bottom: 35px;
+  color: rgb(63, 76, 119);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: rgb(63, 76, 119);
+}
+
+input {
+  margin-bottom: 20px;
+  padding: 10px;
+
+  border: 1px solid #ccc;
+  border-radius: 4px;
+
+  font-size: 16px;
+}
+
+button {
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+
+  background-color: rgb(63, 76, 119);
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+
+  transition: background .3s;
+}
+
+button:hover {
+  background-color: rgb(42, 50, 75);
+}
+
+.right-screen2 button {
+  margin-top: 35px;
+}
