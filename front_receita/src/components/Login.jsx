@@ -1,11 +1,46 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { entrar } from '../service/api';
 
 
-import React, { useState } from 'react';
-import { Login, entrar } from '../service/api';
 const Login = () => {
   
+    const [usuarioname, setUsuarioname] = useState("");
+    const [password, setPassword] = useState("");
+  
+    const handleName = (e) => {
+      setUsuarioname(e.target.value);
+    };
+    const handlePassword = (e) => {
+      setPassword(e.target.value);
+    };
+  
+    function  handleSubmit(){
+  
+      const data = {
+        usuarioname,
+        password
+      }
+  
+      
+      
+      console.log(data);
+      
 
+
+   
+        const response =  entrar(data);
+        try {
+          if(response.status === 200){
+            window.alert("logado com sucesso!");
+            window.location.href = "/pagina"
+          }
+        } catch (error) {
+          window.alert("Ocorreu um erro ao logar");
+        
+      }
+  
+    }
   return (
     <div className="container pt-5 pb-5 "> {/* Adicionando margem superior (mt-5) e inferior (mb-5) */}
      
