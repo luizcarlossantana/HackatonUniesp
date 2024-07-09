@@ -18,8 +18,8 @@ public class UsuarioController {
 
     @PostMapping("/login")
     public ResponseEntity login(@RequestBody UsuarioDTO objDTO){
-        userService.login(objDTO);
-        return ResponseEntity.ok().body("Login realizado com sucesso!");
+
+        return ResponseEntity.ok().body(userService.login(objDTO));
     }
 
     @DeleteMapping("/{id}")

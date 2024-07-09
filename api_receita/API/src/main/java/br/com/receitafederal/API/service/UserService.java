@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.Optional;
 
@@ -23,7 +24,7 @@ public class UserService {
 
     private BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
-    public Boolean login(UsuarioDTO objDTO) {
+    public Usuario login(UsuarioDTO objDTO) {
         try {
             boolean compararSenha = false;
             if (objDTO.getUsuarioname() != null && objDTO.getPassword() != null) {
@@ -41,10 +42,12 @@ public class UserService {
                     escolhido = cpf.get();
                 }
 
-                compararSenha = escolhido.getPassword().equals(objDTO.getPassword());
-                return compararSenha;
+                if(escolhido.getPassword().equals(objDTO.getPassword())){;
+                return escolhido;
+            }}else {
+                throw new UserNotFoundException("senha ou login incorretos");
             }
-            return compararSenha;
+            return new Usuario();
         }catch (Exception e){
             throw new UserNotFoundException("Usuario ou senha incorreta!");
         }
@@ -75,4 +78,6 @@ public class UserService {
     public Usuario creatUser(){
         return null;
     }
+
+
 }

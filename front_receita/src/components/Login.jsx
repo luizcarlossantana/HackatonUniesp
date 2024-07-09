@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { entrar } from '../service/api';
+import { criarVoto, entrar } from '../service/api';
 
 
 const Login = () => {
@@ -27,18 +27,22 @@ const Login = () => {
       console.log(data);
       
 
-
+      
    
-        const response =  entrar(data);
-        try {
-          if(response.status === 200){
-            window.alert("logado com sucesso!");
-            window.location.href = "/pagina"
-          }
-        } catch (error) {
-          window.alert("Ocorreu um erro ao logar");
+         criarVoto(data).then(response =>{ response
+            if(response.status === 200){
+                localStorage.setItem('user',JSON.stringify(response.data))
+                window.alert("logado com sucesso!");
+                window.location.href = "/pagina"
+              }
+
+         }).catch( )
+       
+
+       
+         
         
-      }
+      
   
     }
   return (
